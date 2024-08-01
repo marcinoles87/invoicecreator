@@ -4,9 +4,19 @@ import {useState} from 'react'
 
 function App() {
 
+  const [my_company , setMyCompany] = useState('');
+  const [my_nip , setMyNip] = useState('');
+  const [my_adres , setMyAdres] = useState('');
+
+  const [buyer_company , setBuyerCompany] = useState('');
+  const [buyer_nip , setBuyerNip] = useState('');
+  const [buyer_adres , setBuyerAdres] = useState('')
+
   const [product , setProduct] = useState('');
   const [price , setPrice] = useState('');
   const [pieces , setPieces] = useState('');
+
+  const [sum , setSum] = useState('');
 
   const [allProduct , setAllProduct] = useState([]);
 
@@ -28,6 +38,23 @@ function App() {
     setPrice('');
     setPieces('');
 
+    const inp = document.querySelectorAll('.item');
+    inp.value=''
+
+    setSum(
+      allProduct.map( (item) => {
+        return(
+          <>
+          {item.sum}
+          </>
+        )
+      })
+    )
+
+    console.log(sum)
+
+    
+
   }
 
   console.log(allProduct)
@@ -46,9 +73,21 @@ function App() {
       </div>
 
       <div className='inputs'>
-        <input type="text" placeholder='product' onChange={ (e) => setProduct(e.target.value)}></input>
-        <input type="number" placeholder='price' onChange={ (e) => setPrice(e.target.value)}></input>
-        <input type="number" placeholder='pieces' onChange={ (e) => setPieces(e.target.value)}></input>
+
+      <h2>Add your company data</h2>
+      <input type="text" placeholder='company' onChange={ (e) => setMyCompany(e.target.value)}></input>
+        <input type="number" placeholder='nip' onChange={ (e) => setMyNip(e.target.value)}></input>
+        <input type="number" placeholder='adress' onChange={ (e) => setMyAdres(e.target.value)}></input>
+
+      <h2>Buyer</h2>
+      <input type="text" placeholder='company' onChange={ (e) => setBuyerCompany(e.target.value)}></input>
+        <input type="number" placeholder='nip' onChange={ (e) => setBuyerNip(e.target.value)}></input>
+        <input type="number" placeholder='adress' onChange={ (e) => setBuyerAdres(e.target.value)}></input>
+
+      <h2>Add item to invoices</h2>
+        <input className='item' type="text" placeholder='product' onChange={ (e) => setProduct(e.target.value)}></input>
+        <input className='item' type="number" placeholder='price' onChange={ (e) => setPrice(e.target.value)}></input>
+        <input className='item' type="number" placeholder='pieces' onChange={ (e) => setPieces(e.target.value)}></input>
 
       </div>
 
@@ -65,6 +104,8 @@ function App() {
             </>
           )
         })}
+
+        {sum}
 
       </div>
 
