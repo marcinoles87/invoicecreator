@@ -11,13 +11,15 @@ function App() {
   const [allProduct , setAllProduct] = useState([]);
 
 
-  const addProduct = () => {
+  const addProduct = (e) => {
+    e.preventDefault()
+  
 
     const element = {
         product : product ,
         price : price ,
         pieces : pieces ,
-        sum : price * pieces
+        sum : (price * pieces)
       }
 
     setAllProduct([...allProduct,element])
@@ -57,7 +59,7 @@ function App() {
         {allProduct.map( (item) => {
           return(
             <>
-              <p>{item.product} , cena/szt : {item.price} , sztuk : {item.pieces} , do zapłaty : {item.sum}</p>
+              <p>{item.product} , cena/szt : {item.price} , sztuk : {item.pieces} , do zapłaty : {(item.sum)}</p>
               
               
             </>
