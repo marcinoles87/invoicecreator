@@ -8,10 +8,27 @@ function App() {
   const [price , setPrice] = useState('');
   const [pieces , setPieces] = useState('');
 
+  const [allProduct , setAllProduct] = useState([]);
+
 
   const addProduct = () => {
-    
+
+    const element = {
+        product : product ,
+        price : price ,
+        pieces : pieces ,
+        sum : price * pieces
+      }
+
+    setAllProduct([...allProduct,element])
+
+    setProduct('');
+    setPrice('');
+    setPieces('');
+
   }
+
+  console.log(allProduct)
 
   const handleSubmit = () => {
 
@@ -34,6 +51,20 @@ function App() {
       </div>
 
       <button onClick={addProduct}>Add product</button>
+
+
+      <div className='allproduct'>
+        {allProduct.map( (item) => {
+          return(
+            <>
+              <p>{item.product} , cena/szt : {item.price} , sztuk : {item.pieces} , do zapłaty : {item.sum}</p>
+              
+              
+            </>
+          )
+        })}
+
+      </div>
 
       <div className='submit'>
         <button onClick={handleSubmit}>Submit</button>
