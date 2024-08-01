@@ -4,18 +4,18 @@ import {useState} from 'react'
 
 function App() {
 
-  let [weight , setWeight] = useState('0'); 
-  let [height , setHeight] = useState('0');
-  const [bmi , setBmi ] = useState('');
+  const [product , setProduct] = useState('');
+  const [price , setPrice] = useState('');
+  const [pieces , setPieces] = useState('');
+
+
+  const addProduct = () => {
+    
+  }
 
   const handleSubmit = () => {
 
-    if(weight > 0){
-      setBmi(weight/(height*height))
-        console.log(bmi)    
-    }else{
-      alert('weight 0 please enter your weight')
-    }
+    
    
   }
 
@@ -23,22 +23,24 @@ function App() {
   return (
     <div className="app-container">
       <div className='header'>
-        <h1>BMI CALCULATOR</h1>
+        <h1>Invoice Creator</h1>
       </div>
 
       <div className='inputs'>
-        <input type="number" placeholder='weight' onChange={ (e) => setWeight(e.target.value)}></input>
-        <input type="number" placeholder='height' onChange={ (e) => setHeight(e.target.value)}></input>
+        <input type="text" placeholder='product' onChange={ (e) => setProduct(e.target.value)}></input>
+        <input type="number" placeholder='price' onChange={ (e) => setPrice(e.target.value)}></input>
+        <input type="number" placeholder='pieces' onChange={ (e) => setPieces(e.target.value)}></input>
 
-        <p> Example : 70kg /  (1.70m * 1.70m) * 2 </p>
       </div>
+
+      <button onClick={addProduct}>Add product</button>
 
       <div className='submit'>
         <button onClick={handleSubmit}>Submit</button>
       </div>
 
       <div className='bmi'>
-        <p>{bmi}</p>
+        
 
       </div>
     
