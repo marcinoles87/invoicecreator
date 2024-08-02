@@ -20,8 +20,13 @@ function App() {
 
   const [allProduct , setAllProduct] = useState([]);
 
+ 
+  const total = () => {
+     const totall = allProduct.reduce( (prev, current) => prev + current.sum , 0);
+    return <p> Total : {totall} </p>
+  }
 
-  const addProduct = (e) => {
+  const addProduct = (e,index) => {
     e.preventDefault()
   
 
@@ -42,18 +47,10 @@ function App() {
     inp.value=''
 
     setSum(
-      allProduct.map( (item) => {
-        return(
-          <>
-          {item.sum}
-          </>
-        )
-      })
+      total()
     )
 
     console.log(sum)
-
-    
 
   }
 
@@ -64,6 +61,8 @@ function App() {
     
    
   }
+
+  
 
 
   return (
