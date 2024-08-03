@@ -60,13 +60,10 @@ function App() {
    }
   
 
-
-
   const handleSubmit = () => {
     setConfirm(true)
   }
 
-  
 
 
   return (
@@ -77,32 +74,33 @@ function App() {
 
       <div className='inputs'>
 
-      <h2>Add your company data</h2>
+      <h2>Sprzedawca</h2>
       <input type="text" placeholder='company' onChange={ (e) => setMyCompany(e.target.value)}></input>
         <input type="number" placeholder='nip' onChange={ (e) => setMyNip(e.target.value)}></input>
         <input type="text" placeholder='adress' onChange={ (e) => setMyAdres(e.target.value)}></input>
+      
 
-      <h2>Buyer</h2>
+      <h2>Nabywca</h2>
       <input type="text" placeholder='company' onChange={ (e) => setBuyerCompany(e.target.value)}></input>
         <input type="number" placeholder='nip' onChange={ (e) => setBuyerNip(e.target.value)}></input>
         <input type="text" placeholder='adress' onChange={ (e) => setBuyerAdres(e.target.value)}></input>
+
+        <h2>Data wykonania usługi</h2>
+        <input type='date' onChange={ (e) => setDate(e.target.value)}></input>
 
       <h2>Add item to invoices</h2>
         <input className='item' type="text" placeholder='product' onChange={ (e) => setProduct(e.target.value)}></input>
         <input className='item' type="number" placeholder='price' onChange={ (e) => setPrice(e.target.value)}></input>
         <input className='item' type="number" placeholder='pieces' onChange={ (e) => setPieces(e.target.value)}></input>
 
-        <h2>Data wykonania usługi</h2>
-        <input type='date' onChange={ (e) => setDate(e.target.value)}></input>
+        <button onClick={addProduct}>Add product</button> 
 
       </div>
-
-      <div>
-        
-      </div>
+        <div> 
+         </div>
       
 
-      <button onClick={addProduct}>Add product</button>
+   
 
 
       <div className='allproduct'>
