@@ -1,7 +1,8 @@
 
 import './App.css';
 import {useEffect, useState} from 'react'
-import {Routes , Route} from 'react-router-dom'
+import {Routes , Route, Link} from 'react-router-dom'
+import Faktura from './pages/Faktura';
 
 function App() {
 
@@ -69,102 +70,106 @@ function App() {
 
   return (
 
-    
-    <div className="app-container">
-      <div className='header'>
-        <h1>Invoice Creator</h1>
-      </div>
-
-      <div className='inputs'>
-
-      <h2>Sprzedawca</h2>
-      <input type="text" placeholder='company' onChange={ (e) => setMyCompany(e.target.value)}></input>
-        <input type="number" placeholder='nip' onChange={ (e) => setMyNip(e.target.value)}></input>
-        <input type="text" placeholder='adress' onChange={ (e) => setMyAdres(e.target.value)}></input>
-      
-
-      <h2>Nabywca</h2>
-      <input type="text" placeholder='company' onChange={ (e) => setBuyerCompany(e.target.value)}></input>
-        <input type="number" placeholder='nip' onChange={ (e) => setBuyerNip(e.target.value)}></input>
-        <input type="text" placeholder='adress' onChange={ (e) => setBuyerAdres(e.target.value)}></input>
-
-        <h2>Data wykonania usługi</h2>
-        <input type='date' onChange={ (e) => setDate(e.target.value)}></input>
-
-      <h2>Add item to invoices</h2>
-        <input className='item' type="text" placeholder='product' onChange={ (e) => setProduct(e.target.value)}></input>
-        <input className='item' type="number" placeholder='price' onChange={ (e) => setPrice(e.target.value)}></input>
-        <input className='item' type="number" placeholder='pieces' onChange={ (e) => setPieces(e.target.value)}></input>
-
-        <button onClick={addProduct}>Add product</button> 
-
-      </div>
-        <div> 
+    <Routes>
+    <Route path='*' element={
+         <div className="app-container">
+         <div className='header'>
+           <h1>Invoice Creator</h1>
          </div>
-      
-
    
-
-
-      <div className='allproduct'>
-        {allProduct.map( (item) => {
-          return(
-            <>
-              <p>{item.product} , cena/szt : {item.price} , sztuk : {item.pieces} , do zapłaty :  {item.sum}</p>
-              
-              
-            </>
-          )
-        })}
-
-
-        <div className='suma'>
-          <button onClick={handlePodsumowanie}>Podsumowanie</button>
-          Podsumowanie : {sum}
-        </div>
-
-       
-      </div>
-
-      <div className='submit'>
-        <button onClick={handleSubmit}>Submit</button>
-      </div>
-
-      <div>
-        {confirm ?
-          <>
-            <p>Sprzedawca</p>
-            <p>{my_company} , {my_adres} , Nip : {my_nip}</p>
-            <p>Kupujacy</p>
-            <p>{buyer_company} , {buyer_adres} , Nip : {my_nip}</p>
-            <h2>Data sprzedaży : {date}</h2>
-            <p>{allProduct.map( (item) => {
-              return(
-                <>
+         <div className='inputs'>
+   
+         <h2>Sprzedawca</h2>
+         <input type="text" placeholder='company' onChange={ (e) => setMyCompany(e.target.value)}></input>
+           <input type="number" placeholder='nip' onChange={ (e) => setMyNip(e.target.value)}></input>
+           <input type="text" placeholder='adress' onChange={ (e) => setMyAdres(e.target.value)}></input>
+         
+   
+         <h2>Nabywca</h2>
+         <input type="text" placeholder='company' onChange={ (e) => setBuyerCompany(e.target.value)}></input>
+           <input type="number" placeholder='nip' onChange={ (e) => setBuyerNip(e.target.value)}></input>
+           <input type="text" placeholder='adress' onChange={ (e) => setBuyerAdres(e.target.value)}></input>
+   
+           <h2>Data wykonania usługi</h2>
+           <input type='date' onChange={ (e) => setDate(e.target.value)}></input>
+   
+         <h2>Add item to invoices</h2>
+           <input className='item' type="text" placeholder='product' onChange={ (e) => setProduct(e.target.value)}></input>
+           <input className='item' type="number" placeholder='price' onChange={ (e) => setPrice(e.target.value)}></input>
+           <input className='item' type="number" placeholder='pieces' onChange={ (e) => setPieces(e.target.value)}></input>
+   
+           <button onClick={addProduct}>Add product</button> 
+   
+         </div>
+           <div> 
+            </div>
+         
+   
+      
+   
+   
+         <div className='allproduct'>
+           {allProduct.map( (item) => {
+             return(
+               <>
                  <p>{item.product} , cena/szt : {item.price} , sztuk : {item.pieces} , do zapłaty :  {item.sum}</p>
                  
-                </>
-              )
-            })}</p>
+                 
+               </>
+             )
+           })}
+   
+   
+           <div className='suma'>
+             <button onClick={handlePodsumowanie}>Podsumowanie</button>
+             Podsumowanie : {sum}
+           </div>
+   
+          
+         </div>
+   
+         <div className='submit'>
+           <button onClick={handleSubmit}>Submit</button>
+           <Link to={'/faktura'}>Pokaz fakture</Link>
+         </div>
+   
+         <div>
+           {confirm ?
+             <>
+               <p>Sprzedawca</p>
+               <p>{my_company} , {my_adres} , Nip : {my_nip}</p>
+               <p>Kupujacy</p>
+               <p>{buyer_company} , {buyer_adres} , Nip : {my_nip}</p>
+               <h2>Data sprzedaży : {date}</h2>
+               <p>{allProduct.map( (item) => {
+                 return(
+                   <>
+                    <p>{item.product} , cena/szt : {item.price} , sztuk : {item.pieces} , do zapłaty :  {item.sum}</p>
+                    
+                   </>
+                 )
+               })}</p>
+   
+                 <h2>Do zapłaty : {sum}</h2>
+             </>
+   
+           
+             : '--'}
+           
+   
+         </div>
+           </div>
+    }>
+   
+      </Route>
 
-              <h2>Do zapłaty : {sum}</h2>
-          </>
-
-        
-          : '--'}
-        
-
-      </div>
-
-      <Routes>
-        <Route>
-
-        </Route>
+    
+        <Route path='/faktura' element={ <Faktura></Faktura>}></Route>
       </Routes>
     
 
       
-    </div>
+    
   );
 }
 
