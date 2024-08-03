@@ -16,6 +16,10 @@ function App() {
   const [price , setPrice] = useState('');
   const [pieces , setPieces] = useState('');
 
+  const [confirm , setConfirm] = useState(false)
+
+  const [date , setDate] = useState('');
+
   const [sum , setSum] = useState('');
 
   const [allProduct , setAllProduct] = useState([]);
@@ -47,21 +51,19 @@ function App() {
     const inp = document.querySelector('.item');
     inp.value=''
 
-    
+    setSum( allProduct.reduce( (prev, current) => prev + current.sum , 0)) 
 
   }
 
   const handlePodsumowanie = () => {
-    const total = () => {
-      const totall = allProduct.reduce( (prev, current) => prev + current.sum , 0);
-      setSum(totall)
+     setSum( allProduct.reduce( (prev, current) => prev + current.sum , 0)) 
    }
-  }
+  
 
 
 
   const handleSubmit = () => {
-
+    setConfirm(true)
   }
 
   
@@ -78,19 +80,27 @@ function App() {
       <h2>Add your company data</h2>
       <input type="text" placeholder='company' onChange={ (e) => setMyCompany(e.target.value)}></input>
         <input type="number" placeholder='nip' onChange={ (e) => setMyNip(e.target.value)}></input>
-        <input type="number" placeholder='adress' onChange={ (e) => setMyAdres(e.target.value)}></input>
+        <input type="text" placeholder='adress' onChange={ (e) => setMyAdres(e.target.value)}></input>
 
       <h2>Buyer</h2>
       <input type="text" placeholder='company' onChange={ (e) => setBuyerCompany(e.target.value)}></input>
         <input type="number" placeholder='nip' onChange={ (e) => setBuyerNip(e.target.value)}></input>
-        <input type="number" placeholder='adress' onChange={ (e) => setBuyerAdres(e.target.value)}></input>
+        <input type="text" placeholder='adress' onChange={ (e) => setBuyerAdres(e.target.value)}></input>
 
       <h2>Add item to invoices</h2>
         <input className='item' type="text" placeholder='product' onChange={ (e) => setProduct(e.target.value)}></input>
         <input className='item' type="number" placeholder='price' onChange={ (e) => setPrice(e.target.value)}></input>
         <input className='item' type="number" placeholder='pieces' onChange={ (e) => setPieces(e.target.value)}></input>
 
+        <h2>Data wykonania usługi</h2>
+        <input type='date' onChange={ (e) => setDate(e.target.value)}></input>
+
       </div>
+
+      <div>
+        
+      </div>
+      
 
       <button onClick={addProduct}>Add product</button>
 
@@ -119,7 +129,26 @@ function App() {
         <button onClick={handleSubmit}>Submit</button>
       </div>
 
-      <div className='bmi'>
+      <div>
+        {confirm ?
+          <>
+            <p>Sprzedawca</p>
+            <p>{my_company} , {my_adres} , Nip : {my_nip}</p>
+            <p>Kupujacy</p>
+            <p>{buyer_company} , {buyer_adres} , Nip : {my_nip}</p>
+            <h2>Data sprzedaży : {date}</h2>
+            <p>{allProduct.map( (item) => {
+              return(
+                <>
+                 <p>{item.product} , cena/szt : {item.price} , sztuk : {item.pieces} , do zapłaty :  {item.sum}</p>
+                 <h2>Do zapłaty : {sum}</h2>
+                </>
+              )
+            })}</p>
+          </>
+
+        
+          : '--'}
         
 
       </div>
