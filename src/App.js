@@ -1,6 +1,6 @@
 
 import './App.css';
-import {useState} from 'react'
+import {useEffect, useState} from 'react'
 
 function App() {
 
@@ -20,14 +20,15 @@ function App() {
 
   const [allProduct , setAllProduct] = useState([]);
 
+
+  // useEffect( () => {
+  //   setSum( prev => [...allProduct])
+  // } , [sum])
  
-  const total = () => {
-     const totall = allProduct.reduce( (prev, current) => prev + current.sum , 0);
-    return <p> Total : {totall} </p>
-  }
+
 
   const addProduct = (e,index) => {
-    e.preventDefault()
+    // e.preventDefault()
   
 
     const element = {
@@ -43,23 +44,24 @@ function App() {
     setPrice('');
     setPieces('');
 
-    const inp = document.querySelectorAll('.item');
+    const inp = document.querySelector('.item');
     inp.value=''
 
-    setSum(
-      total()
-    )
-
-    console.log(sum)
+    
 
   }
 
-  console.log(allProduct)
+  const handlePodsumowanie = () => {
+    const total = () => {
+      const totall = allProduct.reduce( (prev, current) => prev + current.sum , 0);
+      setSum(totall)
+   }
+  }
+
+
 
   const handleSubmit = () => {
 
-    
-   
   }
 
   
@@ -97,15 +99,20 @@ function App() {
         {allProduct.map( (item) => {
           return(
             <>
-              <p>{item.product} , cena/szt : {item.price} , sztuk : {item.pieces} , do zapłaty : {(item.sum)}</p>
+              <p>{item.product} , cena/szt : {item.price} , sztuk : {item.pieces} , do zapłaty :  {item.sum}</p>
               
               
             </>
           )
         })}
 
-        {sum}
 
+        <div className='suma'>
+          <button onClick={handlePodsumowanie}>Podsumowanie</button>
+          Podsumowanie : {sum}
+        </div>
+
+       
       </div>
 
       <div className='submit'>
