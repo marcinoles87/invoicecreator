@@ -141,10 +141,12 @@ function App() {
               return(
                 <>
                  <p>{item.product} , cena/szt : {item.price} , sztuk : {item.pieces} , do zapłaty :  {item.sum}</p>
-                 <h2>Do zapłaty : {sum}</h2>
+                 
                 </>
               )
             })}</p>
+
+              <h2>Do zapłaty : {sum}</h2>
           </>
 
         
