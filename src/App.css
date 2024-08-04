@@ -26,3 +26,17 @@ button{
   border-radius: 5px;
   color: rgb(59, 59, 59);
 }
+
+.faktura-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.dane_gora{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}

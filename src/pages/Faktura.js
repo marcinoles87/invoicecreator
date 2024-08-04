@@ -3,15 +3,36 @@ import React from 'react'
 function Faktura(props) {
 
   console.log(props)
+
+  const {my_company,my_adres,my_nip,buyer_company,buyer_adres,buyer_nip } = props
+  
   
   return (
     <div className='faktura-container'>
-      <div className='faktura-dane'>
-        <h2>Sprzedawca</h2>
-        <p>{}</p>
+      <div className='dane_gora'>
+          <div className='sprzedawca'>
+            <h2>Sprzedawca</h2>
+            <p>{my_company}</p>
+            <p>{my_adres}</p>
+            <p>{my_nip}</p>
+          </div>
+
+          <div className='nabywca'>
+            <h2>Nabywca</h2>
+            <p>{buyer_company}</p>
+            <p>{buyer_adres}</p>
+            <p>{buyer_nip}</p>
+        </div>
       </div>
 
+      <h2>Faktura vat nr ____________         z dnia  _______________  </h2>
+
+      <div className='produkty'>
+
+      </div>
     </div>
+
+
   )
 }
 
