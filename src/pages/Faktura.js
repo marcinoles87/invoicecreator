@@ -1,8 +1,17 @@
 import React from 'react'
 
-function Faktura() {
+function Faktura(props) {
+
+  console.log(props)
+  
   return (
-    <div>Faktura</div>
+    <div className='faktura-container'>
+      <div className='faktura-dane'>
+        <h2>Sprzedawca</h2>
+        <p>{}</p>
+      </div>
+
+    </div>
   )
 }
 

@@ -164,7 +164,18 @@ function App() {
       </Route>
 
     
-        <Route path='/faktura' element={ <Faktura></Faktura>}></Route>
+        <Route path='/faktura' element={ 
+          
+          <Faktura
+              my_company={my_company}
+              my_adres={my_adres}
+              my_nip={my_nip}
+              
+              buyer_company={buyer_company}
+              buyer_adres={buyer_adres}
+              buyer_nip={buyer_nip}
+        
+            ></Faktura>}></Route>
       </Routes>
     
 
