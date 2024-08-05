@@ -4,8 +4,9 @@ function Faktura(props) {
 
   console.log(props)
 
-  const {my_company,my_adres,my_nip,buyer_company,buyer_adres,buyer_nip } = props
+  const {my_company,my_adres,my_nip,buyer_company,buyer_adres,buyer_nip,allProduct,product,price,pieces,sum } = props
   
+ 
   
   return (
     <div className='faktura-container'>
@@ -28,6 +29,32 @@ function Faktura(props) {
       <h2>Faktura vat nr ____________         z dnia  _______________  </h2>
 
       <div className='produkty'>
+         <table>
+         <tr>
+                    <td>Produkt</td>
+                    <td>Cena jednostkowa</td>
+                    <td>Ilosc</td>
+                    <td>Wartosc</td>
+                  </tr>
+          {allProduct.map( (item) => {
+            return(
+              <div className='produkt'>
+               
+                  
+                  <tr>
+                    <td><p>{item.product}</p></td>
+                    <td><p>{item.price}</p></td>
+                    <td><p>{item.pieces}</p></td>
+                    <td> <p>{item.sum}</p></td>
+                  </tr>             
+              </div>
+            )
+          })}
+
+</table>
+
+
+            <h2>Do zapłaty : {sum}</h2>
 
       </div>
     </div>

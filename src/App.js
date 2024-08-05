@@ -27,10 +27,6 @@ function App() {
   const [allProduct , setAllProduct] = useState([]);
 
 
-  // useEffect( () => {
-  //   setSum( prev => [...allProduct])
-  // } , [sum])
- 
 
 
   const addProduct = (e,index) => {
@@ -174,6 +170,13 @@ function App() {
               buyer_company={buyer_company}
               buyer_adres={buyer_adres}
               buyer_nip={buyer_nip}
+
+              allProduct={allProduct}
+
+              product={product}
+              price={price}
+              pieces={pieces}
+              sum={sum}
         
             ></Faktura>}></Route>
       </Routes>
