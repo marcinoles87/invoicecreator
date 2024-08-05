@@ -31,23 +31,22 @@ function Faktura(props) {
       <div className='produkty'>
          <table>
          <tr>
-                    <td>Produkt</td>
-                    <td>Cena jednostkowa</td>
-                    <td>Ilosc</td>
-                    <td>Wartosc</td>
+                    <th>Produkt</th>
+                    <th>Cena jednostkowa</th>
+                    <th>Ilosc</th>
+                    <th>Wartosc</th>
                   </tr>
           {allProduct.map( (item) => {
             return(
-              <div className='produkt'>
-               
-                  
+              
+              
                   <tr>
-                    <td><p>{item.product}</p></td>
-                    <td><p>{item.price}</p></td>
-                    <td><p>{item.pieces}</p></td>
-                    <td> <p>{item.sum}</p></td>
+                    <td>{item.product}</td>
+                    <td>{item.price}</td>
+                    <td>{item.pieces}</td>
+                    <td>{item.sum}</td>
                   </tr>             
-              </div>
+          
             )
           })}
 
