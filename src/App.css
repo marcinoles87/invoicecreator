@@ -32,14 +32,18 @@ button{
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: auto 100px;
 }
 
 .dane_gora{
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  width: 100%;
+  justify-content: space-evenly;
   align-items: center;
 }
+
+
 
 table{
   border-collapse: collapse;

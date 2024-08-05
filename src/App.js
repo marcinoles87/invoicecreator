@@ -21,6 +21,7 @@ function App() {
   const [confirm , setConfirm] = useState(false)
 
   const [date , setDate] = useState('');
+  const [platnosc , setPlatnosc] = useState('')
 
   const [sum , setSum] = useState('');
 
@@ -88,6 +89,9 @@ function App() {
    
            <h2>Data wykonania usługi</h2>
            <input type='date' onChange={ (e) => setDate(e.target.value)}></input>
+
+           <h2>Termin płatności</h2>
+           <input type="date" onChange={ (e) => setPlatnosc(e.target.value)}></input>
    
          <h2>Add item to invoices</h2>
            <input className='item' type="text" placeholder='product' onChange={ (e) => setProduct(e.target.value)}></input>
@@ -172,6 +176,8 @@ function App() {
               buyer_nip={buyer_nip}
 
               allProduct={allProduct}
+
+              platnosc={platnosc}
 
               product={product}
               price={price}
