@@ -43,5 +43,14 @@ button{
 
 table{
   border-collapse: collapse;
-  width: 100%;
+  width: 70vw;
+  /* border: 1px solid black; */
+  text-align: center;
+  
+  
+}
+
+table th , td{
+  border: 1px solid #bcbcbc;
+  padding: 8px;
 }

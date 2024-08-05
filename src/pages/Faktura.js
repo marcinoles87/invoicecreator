@@ -31,20 +31,18 @@ function Faktura(props) {
       <div className='produkty'>
          <table>
          <tr>
-                    <th>Produkt</th>
+                    <th>Nazwa</th>
                     <th>Cena jednostkowa</th>
                     <th>Ilosc</th>
                     <th>Wartosc</th>
                   </tr>
           {allProduct.map( (item) => {
             return(
-              
-              
                   <tr>
                     <td>{item.product}</td>
-                    <td>{item.price}</td>
+                    <td>{item.price} Pln</td>
                     <td>{item.pieces}</td>
-                    <td>{item.sum}</td>
+                    <td>{item.sum} Pln</td>
                   </tr>             
           
             )
@@ -53,7 +51,7 @@ function Faktura(props) {
 </table>
 
 
-            <h2>Do zapłaty : {sum}</h2>
+            <h2>Do zapłaty : {sum} Pln</h2>
 
       </div>
     </div>
