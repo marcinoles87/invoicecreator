@@ -33,6 +33,9 @@ function App() {
   const addProduct = (e,index) => {
     // e.preventDefault()
   
+    if(product.length<1 || price.length<1 || pieces.length<1){
+      alert('prosze podac nazwe produktu')
+    }else{
 
     const element = {
         product : product ,
@@ -53,6 +56,7 @@ function App() {
     setSum( allProduct.reduce( (prev, current) => prev + current.sum , 0)) 
 
   }
+}
 
   const handlePodsumowanie = () => {
      setSum( allProduct.reduce( (prev, current) => prev + current.sum , 0)) 
@@ -60,6 +64,7 @@ function App() {
   
 
   const handleSubmit = () => {
+    
     setConfirm(true)
   }
 
@@ -86,6 +91,7 @@ function App() {
          <input type="text" placeholder='company' onChange={ (e) => setBuyerCompany(e.target.value)}></input>
            <input type="number" placeholder='nip' onChange={ (e) => setBuyerNip(e.target.value)}></input>
            <input type="text" placeholder='adress' onChange={ (e) => setBuyerAdres(e.target.value)}></input>
+           
    
            <h2>Data wykonania usługi</h2>
            <input type='date' onChange={ (e) => setDate(e.target.value)}></input>
