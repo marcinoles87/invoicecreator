@@ -72,3 +72,25 @@ table th , td{
   background-color: rgb(183, 183, 183);
 
 }
+
+.faktura_dane{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  margin:50px auto;
+  
+}
+
+.faktura_dane h3{
+  margin: 0;
+}
+
+.sprzedawca{
+  width: 40%;
+}
+
+.nabywca{
+  width: 40%;
+}

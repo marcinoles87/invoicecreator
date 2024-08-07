@@ -11,8 +11,13 @@ function Faktura(props) {
   return (
     <div className='faktura-container'>
 
-      
-    <h2>Faktura vat nr ____________         z dnia  _______________  </h2>
+      <div className='faktura_dane'>
+      <h3>Faktura vat nr ____________         z dnia  _______________  </h3>
+      <h3>Data wystawienia : {platnosc}</h3>
+      <h3>Płatne do : {platnosc} </h3>
+      </div>
+
+
     
       <div className='dane_gora'>
           <div className='sprzedawca'>
@@ -31,7 +36,10 @@ function Faktura(props) {
       </div>
 
       
-      <h2> Termin płatności do : {platnosc}</h2>
+      
+
+      
+
 
       <div className='produkty'>
          <table>
