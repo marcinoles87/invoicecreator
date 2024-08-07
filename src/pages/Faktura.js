@@ -16,17 +16,17 @@ function Faktura(props) {
     
       <div className='dane_gora'>
           <div className='sprzedawca'>
-            <h2>Sprzedawca</h2>
+            <h2 className='sprzedawca_nabywca'>Sprzedawca</h2>
             <p>{my_company}</p>
             <p>{my_adres}</p>
-            <p>{my_nip}</p>
+            <p>Nip : {my_nip}</p>
           </div>
 
           <div className='nabywca'>
-            <h2>Nabywca</h2>
+            <h2 className='sprzedawca_nabywca'>Nabywca</h2>
             <p>{buyer_company}</p>
             <p>{buyer_adres}</p>
-            <p>{buyer_nip}</p>
+            <p>Nip : {buyer_nip}</p>
         </div>
       </div>
 
@@ -35,11 +35,12 @@ function Faktura(props) {
 
       <div className='produkty'>
          <table>
-         <tr>
+         <tr className='produkty_gora'>
                     <th>Lp.</th>
                     <th>Nazwa</th>
-                    <th>Cena jednostkowa</th>
                     <th>Ilosc</th>
+                    <th>jm.</th>
+                    <th>Cena jednostkowa</th>
                     <th>Wartosc</th>
                   </tr>
           {allProduct.map( (item,index) => {
@@ -49,8 +50,10 @@ function Faktura(props) {
                   <tr>
                     <td>{index+1}</td>
                     <td>{item.product}</td>
-                    <td>{item.price} Pln</td>
                     <td>{item.pieces}</td>
+                    <td>szt</td>
+                    <td>{item.price} Pln</td>
+                    
                     <td>{item.sum} Pln</td>
                   </tr>             
           
