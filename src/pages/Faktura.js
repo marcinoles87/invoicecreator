@@ -48,7 +48,9 @@ function Faktura(props) {
                     <th>Nazwa</th>
                     <th>Ilosc</th>
                     <th>jm.</th>
+                   
                     <th>Cena jednostkowa</th>
+                    <th>Vat</th>
                     <th>Wartosc</th>
                   </tr>
           {allProduct.map( (item,index) => {
@@ -59,8 +61,9 @@ function Faktura(props) {
                     <td>{item.product}</td>
                     <td>{item.pieces}</td>
                     <td>szt</td>
-                    <td>{item.price}</td>
                     
+                    <td>{item.price}</td>
+                    <td>{item.sum*0.23}</td>
                     <td>{item.sum} Pln</td>
                   </tr>             
           

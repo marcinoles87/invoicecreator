@@ -41,7 +41,7 @@ function App() {
         product : product ,
         price : price ,
         pieces : pieces ,
-        sum : (price * pieces).toFixed(2)
+        sum : (price * pieces)
       }
 
     setAllProduct([...allProduct,element])
@@ -76,7 +76,7 @@ function App() {
     <Route path='*' element={
          <div className="app-container">
          <div className='header'>
-           <h1>Invoice Creator</h1>
+           <h1>Kreator Faktur</h1>
          </div>
    
          <div className='inputs'>
@@ -99,7 +99,7 @@ function App() {
            <h2>Termin płatności</h2>
            <input type="date" onChange={ (e) => setPlatnosc(e.target.value)}></input>
    
-         <h2>Add item to invoices</h2>
+         <h2>Dodaj produkt do faktury</h2>
            <input className='item' type="text" placeholder='product' onChange={ (e) => setProduct(e.target.value)}></input>
            <input className='item' type="number" placeholder='price' onChange={ (e) => setPrice(e.target.value)}></input>
            <input className='item' type="number" placeholder='pieces' onChange={ (e) => setPieces(e.target.value)}></input>
