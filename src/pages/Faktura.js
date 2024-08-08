@@ -6,7 +6,7 @@ function Faktura(props) {
 
   const {my_company,my_adres,my_nip,buyer_company,buyer_adres,buyer_nip,allProduct,platnosc,product,price,pieces,sum } = props
   
- 
+  
   
   return (
     <div className='faktura-container'>
@@ -53,14 +53,13 @@ function Faktura(props) {
                   </tr>
           {allProduct.map( (item,index) => {
 
-            
             return(
                   <tr>
                     <td>{index+1}</td>
                     <td>{item.product}</td>
                     <td>{item.pieces}</td>
                     <td>szt</td>
-                    <td>{item.price} Pln</td>
+                    <td>{item.price}</td>
                     
                     <td>{item.sum} Pln</td>
                   </tr>             
@@ -70,8 +69,9 @@ function Faktura(props) {
 
 </table>
 
-
-            <h2>Do zapłaty : {sum} Pln</h2>
+            <div className='do_zaplaty'>
+              <h2>Do zapłaty : {sum} Pln</h2>
+            </div>
 
       </div>
     </div>

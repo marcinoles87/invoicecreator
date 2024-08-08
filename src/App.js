@@ -33,15 +33,15 @@ function App() {
   const addProduct = (e,index) => {
     // e.preventDefault()
   
-    if(product.length<1 || price.length<1 || pieces.length<1){
-      alert('prosze podac nazwe produktu')
+    if(my_company.length<1 || my_adres.length<1 || my_nip.length<1 || buyer_adres.length<1 || buyer_company.length<1 || buyer_nip<1 || date.length<1){
+      alert('prosze wypełnic puste pola')
     }else{
 
     const element = {
         product : product ,
         price : price ,
         pieces : pieces ,
-        sum : (price * pieces)
+        sum : (price * pieces).toFixed(2)
       }
 
     setAllProduct([...allProduct,element])
@@ -115,10 +115,10 @@ function App() {
    
    
          <div className='allproduct'>
-           {allProduct.map( (item) => {
+           {allProduct.map( (item , index) => {
              return(
                <>
-                 <p>{item.product} , cena/szt : {item.price} , sztuk : {item.pieces} , do zapłaty :  {item.sum}</p>
+                 <p>{index+1}.{item.product} , cena/szt : {item.price} , sztuk : {item.pieces} , do zapłaty :  {item.sum}</p>
                  
                  
                </>
@@ -142,11 +142,12 @@ function App() {
          <div>
            {confirm ?
              <>
-               <p>Sprzedawca</p>
+               <h3>Sprzedawca</h3>
                <p>{my_company} , {my_adres} , Nip : {my_nip}</p>
-               <p>Kupujacy</p>
+               <h3>Nabywca</h3>
                <p>{buyer_company} , {buyer_adres} , Nip : {my_nip}</p>
-               <h2>Data sprzedaży : {date}</h2>
+               <p>Data sprzedaży : {date}</p>
+               <h3>Produkty</h3>
                <p>{allProduct.map( (item) => {
                  return(
                    <>
@@ -156,7 +157,7 @@ function App() {
                  )
                })}</p>
    
-                 <h2>Do zapłaty : {sum}</h2>
+                 <h2>Suma do zapłaty : {sum}</h2>
              </>
    
            

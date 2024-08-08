@@ -94,3 +94,9 @@ table th , td{
 .nabywca{
   width: 40%;
 }
+
+.do_zaplaty{
+  display: flex;
+  justify-content: end;
+  margin-top:50px;
+}
