@@ -2,10 +2,9 @@ import React from 'react'
 
 function Faktura(props) {
 
-  console.log(props)
+  
 
   const {my_company,my_adres,my_nip,buyer_company,buyer_adres,buyer_nip,allProduct,platnosc,product,price,pieces,sum } = props
-  
   
   
   return (
@@ -35,12 +34,6 @@ function Faktura(props) {
         </div>
       </div>
 
-      
-      
-
-      
-
-
       <div className='produkty'>
          <table>
          <tr className='produkty_gora'>
@@ -49,11 +42,13 @@ function Faktura(props) {
                     <th>Ilosc</th>
                     <th>jm.</th>
                    
-                    <th>Cena jednostkowa</th>
-                    <th>Vat</th>
-                    <th>Wartosc</th>
+                    <th>Cena jednostkowa Brutto</th>
+                    <th>Cena jednostkowa Netto</th>
+                    <th>Kwota Vat</th>
+                    <th>Wartosc Brutto</th>
                   </tr>
           {allProduct.map( (item,index) => {
+
 
             return(
                   <tr>
@@ -63,18 +58,47 @@ function Faktura(props) {
                     <td>szt</td>
                     
                     <td>{item.price}</td>
-                    <td>{item.sum*0.23}</td>
+                    <td>{item.price-(item.price*0.23).toFixed(2)}</td>
+                    <td>{(item.sum*0.23).toFixed(2)}</td>
                     <td>{item.sum} Pln</td>
                   </tr>             
           
             )
+
+            
           })}
+
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>{ (allProduct.reduce( (prev, current) => prev + current.sum*0.23 , 0)).toFixed(2)}</td>
+            <td>{sum} PLN</td>
+          </tr>
 
 </table>
 
             <div className='do_zaplaty'>
-              <h2>Do zapłaty : {sum} Pln</h2>
+              <h2>Wartość brutto : {sum} Pln</h2>
             </div>
+
+
+          <div className='podpisy'>
+              <div>
+              <p>Podpis osoby</p>
+              <p>upoważnionej do wystawienia faktury</p>
+            </div>
+
+            
+            <div>
+              <p>Podpis osoby</p>
+              <p>upoważnionej do odbioru faktury</p>
+            </div>
+          </div>
+          
 
       </div>
     </div>

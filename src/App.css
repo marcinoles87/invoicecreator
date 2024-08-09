@@ -36,7 +36,7 @@ button{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: auto 100px;
+  margin: auto 50px;
 }
 
 .dane_gora{
@@ -66,6 +66,10 @@ table th , td{
 .sprzedawca_nabywca{
   background-color: rgb(183, 183, 183);
   text-align: center;
+}
+
+.produkty{
+  margin-top: 100px;
 }
 
 .produkty_gora{
@@ -99,4 +103,13 @@ table th , td{
   display: flex;
   justify-content: end;
   margin-top:50px;
+}
+
+.podpisy{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  margin-top: 100px;
 }
