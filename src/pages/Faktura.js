@@ -60,7 +60,7 @@ function Faktura(props) {
                     <td>{item.price}</td>
                     <td>{(item.price-(item.price*0.23)).toFixed(2)}</td>
                     <td>{(item.sum*0.23).toFixed(2)}</td>
-                    <td>{item.sum} Pln</td>
+                    <td>{item.sum} PLN</td>
                   </tr>             
           
             )
@@ -82,7 +82,7 @@ function Faktura(props) {
 </table>
 
             <div className='do_zaplaty'>
-              <h2>Wartość brutto : {sum} Pln</h2>
+              <h2>Wartość brutto : {sum} PLN</h2>
             </div>
 
 
