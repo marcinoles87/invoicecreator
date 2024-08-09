@@ -51,7 +51,13 @@ function App() {
     setPieces('');
 
     const inp = document.querySelector('.item');
+    const inp2 = document.querySelector('.item2');
+    const inp3 = document.querySelector('.item3');
     inp.value=''
+    inp2.value=''
+    inp3.value=''
+
+    console.log(inp)
 
     setSum( allProduct.reduce( (prev, current) => prev + current.sum , 0)) 
 
@@ -101,8 +107,8 @@ function App() {
    
          <h2>Dodaj produkt do faktury</h2>
            <input className='item' type="text" placeholder='product' onChange={ (e) => setProduct(e.target.value)}></input>
-           <input className='item' type="number" placeholder='price' onChange={ (e) => setPrice(e.target.value)}></input>
-           <input className='item' type="number" placeholder='pieces' onChange={ (e) => setPieces(e.target.value)}></input>
+           <input className='item2' type="number" placeholder='price' onChange={ (e) => setPrice(e.target.value)}></input>
+           <input className='item3' type="number" placeholder='pieces' onChange={ (e) => setPieces(e.target.value)}></input>
    
            <button onClick={addProduct}>Add product</button> 
    
@@ -135,7 +141,7 @@ function App() {
          </div>
    
          <div className='submit'>
-           <button onClick={handleSubmit}>Submit</button>
+           <button onClick={handleSubmit}>Zapisz</button>
            <Link to={'/faktura'}>Pokaz fakture</Link>
          </div>
    
