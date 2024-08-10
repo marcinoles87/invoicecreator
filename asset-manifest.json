@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/invoicecreator/static/css/main.fd25d739.css",
+    "main.js": "/invoicecreator/static/js/main.9ae43479.js",
+    "index.html": "/invoicecreator/index.html",
+    "main.fd25d739.css.map": "/invoicecreator/static/css/main.fd25d739.css.map",
+    "main.9ae43479.js.map": "/invoicecreator/static/js/main.9ae43479.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fd25d739.css",
+    "static/js/main.9ae43479.js"
+  ]
+}
