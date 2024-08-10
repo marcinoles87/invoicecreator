@@ -123,10 +123,11 @@ function App() {
    
    
          <div className='allproduct'>
+         <p>POZYCJE NA FAKTURZE :</p>
            {allProduct.map( (item , index) => {
              return(
                <>
-                 <p>{index+1}.{item.product} , cena/szt : {item.price} , sztuk : {item.pieces} , do zapłaty :  {item.sum}</p>
+                 <p>{index+1}. {item.product} , cena/szt : {item.price} , sztuk : {item.pieces} , do zapłaty :  {item.sum}</p>
                  
                  
                </>
@@ -143,7 +144,7 @@ function App() {
          </div>
    
          <div className='submit'>
-           <button onClick={handleSubmit}>Zapisz</button>
+           <button onClick={handleSubmit}>Zapisz Fakture</button>
            <Link className='link' to={'/faktura'} >Pokaz fakture</Link>
          </div>
    
@@ -159,6 +160,7 @@ function App() {
                <p>{allProduct.map( (item) => {
                  return(
                    <>
+                    
                     <p>{item.product} , cena/szt : {item.price} , sztuk : {item.pieces} , do zapłaty :  {item.sum}</p>
                     
                    </>

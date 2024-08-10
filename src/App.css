@@ -120,5 +120,11 @@ table th , td{
   color:white;
   border-radius: 10px;
   padding: 10px;
+  transition: 0.3s ease;
+}
+
+.link:hover{
+  padding: 12px;
+  
 }
 
