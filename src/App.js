@@ -76,6 +76,8 @@ function App() {
 
 
 
+
+
   return (
 
     <Routes>
@@ -142,7 +144,7 @@ function App() {
    
          <div className='submit'>
            <button onClick={handleSubmit}>Zapisz</button>
-           <Link to={'/faktura'}>Pokaz fakture</Link>
+           <Link className='link' to={'/faktura'} >Pokaz fakture</Link>
          </div>
    
          <div>
@@ -197,7 +199,9 @@ function App() {
               pieces={pieces}
               sum={sum}
         
-            ></Faktura>}></Route>
+            ></Faktura>}>
+
+            </Route>
       </Routes>
     
 

@@ -113,3 +113,12 @@ table th , td{
   text-align: center;
   margin-top: 100px;
 }
+
+.link{
+  text-decoration: none;
+  background-color: rgb(202, 47, 47);
+  color:white;
+  border-radius: 10px;
+  padding: 10px;
+}
+
