@@ -58,8 +58,8 @@ function Faktura(props) {
                     <td>szt</td>
                     
                     <td>{item.price}</td>
-                    <td>{(item.price-(item.price*0.23)).toFixed(2)}</td>
-                    <td>{(item.sum*0.23).toFixed(2)}</td>
+                    <td>{(item.price-(item.sum/(1+0.23)*0.23)).toFixed(2)}</td>
+                    <td>{(item.sum/(1+0.23)*0.23).toFixed(2)}</td>
                     <td>{item.sum} PLN</td>
                   </tr>             
           
@@ -75,7 +75,7 @@ function Faktura(props) {
             <td></td>
             <td></td>
             <td></td>
-            <td>{ (allProduct.reduce( (prev, current) => prev + current.sum*0.23 , 0)).toFixed(2)}</td>
+            <td>{ (allProduct.reduce( (prev, current) => prev + (current.sum/(1+0.23)*0.23) , 0).toFixed(2))}</td>
             <td>{(sum).toFixed(2)} PLN</td>
           </tr>
 

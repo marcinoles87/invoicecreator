@@ -148,7 +148,7 @@ function App() {
            <Link className='link' to={'/faktura'} >Pokaz fakture</Link>
          </div>
    
-         <div>
+         <div className='zapisana-faktura'>
            {confirm ?
              <>
                <h3>Sprzedawca</h3>
@@ -161,13 +161,13 @@ function App() {
                  return(
                    <>
                     
-                    <p>{item.product} , cena/szt : {item.price} , sztuk : {item.pieces} , do zapłaty :  {item.sum}</p>
+                    <p>{item.product} , cena/szt : {item.price} , sztuk : {item.pieces} , do zapłaty :  <b>{item.sum} Pln</b></p>
                     
                    </>
                  )
                })}</p>
    
-                 <h2>Suma do zapłaty : {sum}</h2>
+                 <h2>Suma do zapłaty : {sum} PLN</h2>
              </>
    
            
