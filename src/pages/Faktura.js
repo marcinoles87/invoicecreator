@@ -38,13 +38,14 @@ function Faktura(props) {
          <table>
          <tr className='produkty_gora'>
                     <th>Lp.</th>
-                    <th>Nazwa</th>
+                    <th>Nazwa towaru / usługi</th>
                     <th>Ilosc</th>
                     <th>jm.</th>
                    
-                    <th>Cena jednostkowa Brutto</th>
-                    <th>Cena jednostkowa Netto</th>
-                    <th>Kwota Vat</th>
+                    <th>Cena Brutto</th>
+                    <th>Cena Netto</th>
+                    <th>Stawka VAT</th>
+                    <th>Kwota VAT</th>
                     <th>Wartosc Brutto</th>
                   </tr>
           {allProduct.map( (item,index) => {
@@ -59,6 +60,7 @@ function Faktura(props) {
                     
                     <td>{item.price}</td>
                     <td>{(item.price-(item.sum/(1+0.23)*0.23)).toFixed(2)}</td>
+                    <td>23%</td>
                     <td>{(item.sum/(1+0.23)*0.23).toFixed(2)}</td>
                     <td>{item.sum} PLN</td>
                   </tr>             
@@ -75,6 +77,7 @@ function Faktura(props) {
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
             <td>{ (allProduct.reduce( (prev, current) => prev + (current.sum/(1+0.23)*0.23) , 0).toFixed(2))}</td>
             <td>{(sum).toFixed(2)} PLN</td>
           </tr>
@@ -82,7 +85,9 @@ function Faktura(props) {
 </table>
 
             <div className='do_zaplaty'>
-              <h2>Wartość brutto : {sum} PLN</h2>
+              <p>Razem do zapłaty : <b>{sum} PLN</b> </p>
+              <p>Sposób zapłaty : <b>Przelew</b></p>
+              <p>Numer rachunku bankowego : _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _</p>
             </div>
 
 
