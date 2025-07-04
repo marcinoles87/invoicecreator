@@ -59,9 +59,9 @@ function Faktura(props) {
                     <td>szt</td>
                     
                     <td>{item.price}</td>
-                    <td>{(item.price-(item.sum/(1+0.23)*0.23)).toFixed(2)}</td>
+                    <td>{(item.price-(item.sum/(1.23)*0.23)).toFixed(2)*item.pieces}</td>
                     <td>23%</td>
-                    <td>{(item.sum/(1+0.23)*0.23).toFixed(2)}</td>
+                    <td>{(item.sum/(1+0.23)*0.23).toFixed(2)*item.pieces}</td>
                     <td>{item.sum} PLN</td>
                   </tr>             
           
