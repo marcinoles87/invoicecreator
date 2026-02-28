@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/invoicecreator/static/css/main.8f9b3ba1.css",
-    "main.js": "/invoicecreator/static/js/main.edfa076d.js",
+    "main.css": "/invoicecreator/static/css/main.2b6f6da9.css",
+    "main.js": "/invoicecreator/static/js/main.0d9ef108.js",
     "index.html": "/invoicecreator/index.html",
-    "main.8f9b3ba1.css.map": "/invoicecreator/static/css/main.8f9b3ba1.css.map",
-    "main.edfa076d.js.map": "/invoicecreator/static/js/main.edfa076d.js.map"
+    "main.2b6f6da9.css.map": "/invoicecreator/static/css/main.2b6f6da9.css.map",
+    "main.0d9ef108.js.map": "/invoicecreator/static/js/main.0d9ef108.js.map"
   },
   "entrypoints": [
-    "static/css/main.8f9b3ba1.css",
-    "static/js/main.edfa076d.js"
+    "static/css/main.2b6f6da9.css",
+    "static/js/main.0d9ef108.js"
   ]
 }
