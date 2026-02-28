@@ -1,8 +1,8 @@
 .app-container{
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  margin: 10px;
+  
 }
 
 h2{
@@ -19,8 +19,7 @@ h2{
 
 .inputs {
   border-radius: 10px;
-  background-color: rgb(83, 83, 255);
-  text-align: center;
+  text-align: left;
 }
 
 button{
@@ -35,7 +34,7 @@ button{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   margin: auto 50px;
 }
 

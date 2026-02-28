@@ -1,6 +1,6 @@
 {
   "homepage": "https://marcinoles87.github.io/invoicecreator",
-  "name": "bmicalculator",
+  "name": "invoicecreator",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
